@@ -1,0 +1,16 @@
+{
+	"version": 2,
+	"modules": {
+		"telematics": [
+			{
+				"error_code": 102,
+				"error_message": "Low Battery for RKE"
+			},
+			{
+				"error_code": 708,
+				"error_message": "Left Door Motor Faulty"
+			}
+		],
+		"tailgate": []
+	}
+}

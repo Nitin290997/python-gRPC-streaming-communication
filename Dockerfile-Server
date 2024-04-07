@@ -1,0 +1,9 @@
+FROM python:3.11
+RUN apt update
+ADD . /root/
+
+WORKDIR /root
+
+RUN pip install -r requirement.txt
+
+CMD ["bash", "server/start_server.sh"]

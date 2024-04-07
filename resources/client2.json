@@ -1,0 +1,21 @@
+{
+	"version": 0,
+	"modules": {
+		"obd": [
+			{
+				"diag_data": 870,
+				"diag_message": "Odo Reading"
+			},
+			{
+				"diag_data": 35,
+				"diag_message": "Vehicle Speed"
+			}
+		],
+		"ota": [
+			{
+				"diag_data": 0,
+				"diag_message": "OTA update available"
+			}
+		]
+	}
+}

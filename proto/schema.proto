@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+message Error
+{
+  int32 error_code = 1;
+  string error_message = 2;
+}
+
+message Request
+{
+  string version = 1;
+  string node = 2;
+  repeated string resource_names = 3;
+  repeated string resource_locators = 4;
+  string response_nonce = 5;
+  Error error_detail = 6;
+}
+
+message resources
+{
+  map<int32, string> resource = 1;
+}
+
+message Response
+{
+  string version_info = 1;
+  repeated resources resources = 2;
+  string nonce = 3;
+  string ServerId = 4;
+}
+
+message ClientHello
+{
+  string message = 1;
+  string client_data = 2;
+}
+
+message ServerHello
+{
+  string ack = 1;
+  string response_string = 2;
+}
+
+service CommTest
+{
+  rpc Identify(ClientHello) returns(ServerHello) {}
+}
+
+service Client1Communication
+{
+  rpc StreamResources(stream Request) returns (stream Response) {}
+}
+
+service Client2Communication
+{
+  rpc StreamResources(stream Request) returns (stream Response) {}
+}

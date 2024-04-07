@@ -1,0 +1,8 @@
+FROM python:3.11
+RUN apt update
+ADD . /root/
+
+WORKDIR /root
+
+RUN pip install -r requirement.txt
+CMD ["python3", "/root/nodes/gRPC_client2.py", "--serverHost", "network_server", "--serverSecurePort", "9010", "--serverPort", "8010", "--frequency", "5", "--logLevel", "DEBUG"]
